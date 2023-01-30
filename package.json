@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Website guided tour",
   "main": "src/index.js",
+  "devDependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,5 +29,7 @@
   "bugs": {
     "url": "https://github.com/cysense-hq/tour-js/issues"
   },
-  "homepage": "https://github.com/cysense-hq/tour-js#readme"
+  "homepage": "https://github.com/cysense-hq/tour-js#readme",
+  "dependencies": {
+  }
 }

@@ -1,10 +1,11 @@
 import KeyValueStorage from "./KeyValueStorage";
-import BootstrapTheme from "./themes/BootstrapTheme";
 
 export default class Tour {
     static STORAGE_TOUR_INFO_KEY = 'current_active_tour_info'
     static STORAGE_TOUR_TRACKING_KEY = 'current_active_tour_tracking_info'
     static EventTarget = new EventTarget();
+
+    static theme;
 
     constructor({id, slug, title, description, status, slides}) {
         this.data = {};
@@ -24,7 +25,6 @@ export default class Tour {
         this.data.description = description;
         this.data.status = status;
         this.data.slides = slides.sort(this.sorting);
-        this.theme = new BootstrapTheme(this);
 
         if (KeyValueStorage.has(Tour.STORAGE_TOUR_TRACKING_KEY)) {
             this.tracking = JSON.parse(KeyValueStorage.get(Tour.STORAGE_TOUR_TRACKING_KEY));
@@ -38,7 +38,7 @@ export default class Tour {
 
     start() {
         let currentSlide = this.data.slides[this.tracking.currentSlideIndex];
-        this.theme.bindToUi(this.pageSlides);
+        Tour.theme.bindToUi(this.pageSlides);
 
         this.dispatch("started", this.data);
 
@@ -46,14 +46,14 @@ export default class Tour {
     }
 
     setTheme(theme) {
-        this.theme = theme;
+        Tour.theme = theme;
 
         return this;
     }
 
     next() {
         if (this.hasNext()) {
-            this.theme.hide(this.currentSlide);
+            Tour.theme.hide(this.currentSlide);
             this.tracking.currentSlideIndex++;
             let currentSlide = this.current();
             this.dispatch('nextSlide', currentSlide);
@@ -65,7 +65,7 @@ export default class Tour {
 
     previous() {
         if (this.hasPrevious()) {
-            this.theme.hide(this.currentSlide);
+            Tour.theme.hide(this.currentSlide);
             this.tracking.currentSlideIndex--;
             let currentSlide = this.current();
             this.dispatch('previousSlide', currentSlide);
@@ -82,7 +82,7 @@ export default class Tour {
         this.tracking.completed = true;
         this.tracking.endAt = Date.now();
         this.saveChanges();
-        this.dispatch('completed', currentSlide);
+        this.dispatch('completed', this);
 
         //call API to sent Tour statistics;
         this.theme.hideTourInfoBox();

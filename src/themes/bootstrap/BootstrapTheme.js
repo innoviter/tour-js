@@ -100,7 +100,7 @@ export default class BootstrapTheme {
         }
     }
 
-    showTourInfoBox({title, description,currentSlide,totalSlide}) {
+    showTourInfoBox({title, description, currentSlide, totalSlide}) {
         let temp = `<div class="card bottom-0 left-0" id="tourInfoBox" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">${title}</h5>
@@ -163,3 +163,4 @@ export default class BootstrapTheme {
     }
 
 }
+
