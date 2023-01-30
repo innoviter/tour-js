@@ -1,0 +1,29 @@
+{
+  "name": "tourjs",
+  "version": "1.0.0",
+  "description": "Website guided tour",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cysense-hq/tour-js.git"
+  },
+  "keywords": [
+    "website guided tour",
+    "guided tour",
+    "tour",
+    "storybook",
+    "step by step guide",
+    "how to use website/webapp",
+    "website feature explain",
+    "virtual assistant"
+  ],
+  "author": "cysense-hq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cysense-hq/tour-js/issues"
+  },
+  "homepage": "https://github.com/cysense-hq/tour-js#readme"
+}
