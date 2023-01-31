@@ -1,9 +1,26 @@
+import TourJs from "../../index";
+
 export default class TourStartElement extends HTMLElement {
     constructor() {
         super();
+        this.apiEndpoint = this.getAttribute('api');
         this.addEventListener('click', (e) => {
-            console.log('What is that');
+            this.fetch();
         });
+    }
+
+    fetch() {
+        fetch(this.apiEndpoint, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                globalThis.webtour = new TourJs(data);
+
+                webtour.start();
+            });
     }
 
     static get observedAttributes() {

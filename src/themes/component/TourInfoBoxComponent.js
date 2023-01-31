@@ -1,6 +1,7 @@
 export default class TourInfoBoxComponent extends HTMLElement {
     constructor() {
         super();
+        let shadow = this.attachShadow({mode: 'open'});
     }
 
     connectedCallback() {
@@ -8,7 +9,7 @@ export default class TourInfoBoxComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return [''];
+        return ['currentIndex', 'tour-id'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
