@@ -9,7 +9,12 @@ export default class Tour {
 
     static themeClass;
 
-    constructor({id, slug, title, description, status, slides})  {
+    static settings = {
+        ENABLE_ARROW_KEYS: true,
+        SHOW_INFO_BOX: true
+    };
+
+    constructor({id, slug, title, description, status, slides}) {
         this.data = {};
         this.currentSlide = {};
         this.tracking = {
@@ -40,7 +45,7 @@ export default class Tour {
 
     start() {
         let currentSlide = this.data.slides[this.tracking.currentSlideIndex];
-        Tour.theme= new Tour.themeClass(this);
+        Tour.theme = new Tour.themeClass(this);
         Tour.theme.bindToUi(this.pageSlides);
 
         this.dispatch("started", this.data);
@@ -48,7 +53,7 @@ export default class Tour {
         return this.showOrRedirectTo(currentSlide);
     }
 
-   static setTheme(theme) {
+    static setTheme(theme) {
         Tour.themeClass = theme;
 
         return this;
