@@ -7,7 +7,9 @@ export default class Tour {
 
     static theme;
 
-    constructor({id, slug, title, description, status, slides}) {
+    static themeClass;
+
+    constructor({id, slug, title, description, status, slides})  {
         this.data = {};
         this.currentSlide = {};
         this.tracking = {
@@ -38,6 +40,7 @@ export default class Tour {
 
     start() {
         let currentSlide = this.data.slides[this.tracking.currentSlideIndex];
+        Tour.theme= new Tour.themeClass(this);
         Tour.theme.bindToUi(this.pageSlides);
 
         this.dispatch("started", this.data);
@@ -45,8 +48,8 @@ export default class Tour {
         return this.showOrRedirectTo(currentSlide);
     }
 
-    setTheme(theme) {
-        Tour.theme = theme;
+   static setTheme(theme) {
+        Tour.themeClass = theme;
 
         return this;
     }
@@ -85,7 +88,7 @@ export default class Tour {
         this.dispatch('completed', this);
 
         //call API to sent Tour statistics;
-        this.theme.hideTourInfoBox();
+        Tour.theme.hideTourInfoBox();
         this.deleteRecords();
         return true;
     }
@@ -97,7 +100,7 @@ export default class Tour {
         this.dispatch('canceled', this);
 
         //call API to sent Tour statistics;
-        this.theme.hideTourInfoBox();
+        Tour.theme.hideTourInfoBox();
         this.deleteRecords();
         return true;
     }
@@ -107,7 +110,7 @@ export default class Tour {
         this.saveChanges();
 
         if ([this.url.pathname, this.url.href].includes(slide.url)) {
-            this.theme.show(slide);
+            Tour.theme.show(slide);
         } else {
             window.location.href = slide.url;
         }
