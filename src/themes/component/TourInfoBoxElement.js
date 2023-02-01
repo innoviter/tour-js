@@ -11,15 +11,6 @@ export default class TourInfoBoxElement extends HTMLElement {
         if (visibility !== 'show') {
             this.style.display = 'none';
         }
-
-        // let dom = document.["tour-info"];
-        let previousBtn = document.querySelector(".tourPreviousSlideBtn");
-        let nextBtn = document.querySelector(".tourPreviousSlideBtn");
-        let cancelBtn = document.querySelector(".tourPreviousSlideBtn");
-        let completeBtn = document.querySelector(".tourPreviousSlideBtn");
-
-
-
     }
 
     connectedCallback() {
