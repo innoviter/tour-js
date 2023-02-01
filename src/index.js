@@ -9,9 +9,10 @@ class TourJs extends Tour {
 
     }
 }
+
 document.addEventListener('keyup', (e) => {
 
-    if (webtour) {
+    if (webtour !== undefined) {
         if (e.key === 'ArrowRight' && webtour.hasNext()) {
             webtour.next();
         } else if (e.key === 'ArrowLeft' && webtour.hasPrevious()) {
@@ -22,7 +23,6 @@ document.addEventListener('keyup', (e) => {
 document.addEventListener('DOMContentLoaded', (e) => {
     if (TourJs.isOnTour()) {
         globalThis.webtour = TourJs.resume();
-        console.log('Resuming tour')
     }
 });
 
