@@ -1,6 +1,7 @@
 import Tour from "./Tour";
 import TourStartElement from "./themes/component/TourStartElement";
-import TourInfoBoxComponent from "./themes/component/TourInfoBoxComponent";
+import TourInfoBoxElement from "./themes/component/TourInfoBoxElement";
+import TourButtonElement from "./themes/component/TourButtonElement";
 import BootstrapTheme from "./themes/bootstrap/BootstrapTheme";
 
 class TourJs extends Tour {
@@ -8,9 +9,26 @@ class TourJs extends Tour {
 
     }
 }
+document.addEventListener('keyup', (e) => {
 
-customElements.define('tour-info', TourInfoBoxComponent);
+    if (webtour) {
+        if (e.key === 'ArrowRight' && webtour.hasNext()) {
+            webtour.next();
+        } else if (e.key === 'ArrowLeft' && webtour.hasPrevious()) {
+            webtour.previous();
+        }
+    }
+});
+document.addEventListener('DOMContentLoaded', (e) => {
+    if (TourJs.isOnTour()) {
+        globalThis.webtour = TourJs.resume();
+        console.log('Resuming tour')
+    }
+});
+
+customElements.define('tour-info', TourInfoBoxElement);
 customElements.define('tour-start', TourStartElement);
+customElements.define('tour-button', TourButtonElement);
 
 export default TourJs;
 export {BootstrapTheme};
