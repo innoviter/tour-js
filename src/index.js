@@ -12,7 +12,7 @@ class TourJs extends Tour {
 
 document.addEventListener('keyup', (e) => {
 
-    if (webtour !== undefined) {
+    if (typeof webtour !== undefined) {
         if (e.key === 'ArrowRight' && webtour.hasNext()) {
             webtour.next();
         } else if (e.key === 'ArrowLeft' && webtour.hasPrevious()) {

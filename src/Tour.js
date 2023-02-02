@@ -93,7 +93,6 @@ export default class Tour {
         this.dispatch('completed', this);
 
         //call API to sent Tour statistics;
-        Tour.theme.hideTourInfoBox();
         this.deleteRecords();
         return true;
     }
@@ -105,7 +104,6 @@ export default class Tour {
         this.dispatch('canceled', this);
 
         //call API to sent Tour statistics;
-        Tour.theme.hideTourInfoBox();
         this.deleteRecords();
         return true;
     }

@@ -40,11 +40,6 @@ export default class BootstrapTheme {
             }
 
         });
-        this.showTourInfoBox({
-            ...this.tour.data,
-            currentSlide: this.tour.tracking.currentSlideIndex + 1,
-            totalSlide: this.tour.data.slides.length
-        });
     }
 
     show(slide) {
@@ -98,35 +93,6 @@ export default class BootstrapTheme {
         } else {
 
         }
-    }
-
-    showTourInfoBox({title, description, currentSlide, totalSlide}) {
-        let temp = `<div class="card bottom-0 left-0" id="tourInfoBox" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text">${description}</p>
-                            <div class="d-flex justify-content-between">
-                                <button  class="btn btn-outline-warning btn-sm tourPreviousSlideBtn" id="previousSlideBtn">Previous</button>
-                                <div>
-                                    <span id="currentSlideIndex">${currentSlide}</span>
-                                    <span>/</span>
-                                    <span id="tourTotalSlideCount">${totalSlide}</span>
-                                </div>
-                                
-                                <button  class="btn btn-outline-primary btn-sm tourNextSlideBtn" id="nextSlideBtn">Next</button>
-                            </div>
-
-                        </div>
-                         <div class="card-footer text-muted">
-                            <div class="d-flex justify-content-between">
-                                <button  class="btn  btn-outline-warning btn-sm tourCancelBtn" id="tourCancelBtn">Cancel</button>
-                                <button  class="btn btn-outline-primary btn-sm tourCompleteBtn" id="tourCompleteBtn">Complete</button>
-                            </div>
-                        </div>
-                    </div>`;
-        let infobox = document.createElement('div');
-        infobox.innerHTML = temp;
-        document.body.appendChild(infobox);
     }
 
     hideTourInfoBox() {
