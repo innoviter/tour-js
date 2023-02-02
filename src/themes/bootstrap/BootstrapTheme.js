@@ -62,8 +62,8 @@ export default class BootstrapTheme {
                         return `<div>
                                    <p>${slide.content}</p>
                                    <div class="d-flex justify-content-between">
-                                    <button  class="btn btn-outline-primary tourPreviousSlideBtn" >Previous</button>
-                                    <button  class="btn btn-outline-primary tourNextSlideBtn" >Next</button>
+                                        <tour-button role="previous"  class="btn btn-outline-primary tourPreviousSlideBtn" >Previous</tour-button>
+                                        <tour-button role="next"  class="btn btn-outline-primary tourNextSlideBtn" >Next</tour-button>
                                     </div>
                                 </div>`
                     }

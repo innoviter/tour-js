@@ -11,8 +11,8 @@ export default class TourButtonElement extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (oldValue !== newValue && name === 'role') {
-       //     this.removeEventListener('click', this.attachCallback);
-            this.attachCallback(newValue);
+            //     this.removeEventListener('click', this.attachCallback);
+            //   this.attachCallback(newValue);
         }
     }
 
@@ -21,7 +21,7 @@ export default class TourButtonElement extends HTMLElement {
 
         if (role === 'previous') {
             this.addEventListener('click', () => {
-                if (webtour && webtour.hasPrevious()) {
+                if (typeof webtour !== undefined && webtour.hasPrevious()) {
                     webtour.previous();
                 }
             });
@@ -29,7 +29,7 @@ export default class TourButtonElement extends HTMLElement {
 
         if (role === 'next') {
             this.addEventListener('click', () => {
-                if (webtour && webtour.hasNext()) {
+                if (typeof webtour !== undefined && webtour.hasNext()) {
                     webtour.next();
                 }
             });
@@ -37,13 +37,17 @@ export default class TourButtonElement extends HTMLElement {
 
         if (role === 'complete') {
             this.addEventListener('click', () => {
-                webtour.complete();
+                if (typeof webtour !== undefined) {
+                    webtour.complete();
+                }
             });
         }
 
         if (role === 'cancel') {
             this.addEventListener('click', () => {
-                webtour.cancel();
+                if (typeof webtour !== undefined) {
+                    webtour.cancel();
+                }
             });
         }
     }
