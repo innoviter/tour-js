@@ -13,6 +13,12 @@ export default class TourInfoBoxElement extends HTMLElement {
         if (visibility !== 'show') {
             this.style.display = 'none';
         }
+        Tour.EventTarget.addEventListener('completed', (e) => {
+            this.setAttribute('visibility', 'hide');
+        });
+        Tour.EventTarget.addEventListener('canceled', (e) => {
+            this.setAttribute('visibility', 'hide');
+        });
     }
 
     connectedCallback() {
@@ -30,6 +36,13 @@ export default class TourInfoBoxElement extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'currentIndex') {
             this.updateUi();
+        }
+        if (name === 'visibility' && oldValue !== newValue) {
+            if (newValue === 'show') {
+                this.style.display = 'block';
+            } else {
+                this.style.display = 'none';
+            }
         }
     }
 

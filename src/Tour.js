@@ -89,6 +89,7 @@ export default class Tour {
     complete() {
         this.tracking.completed = true;
         this.tracking.endAt = Date.now();
+        Tour.theme.hide(this.current());
         this.saveChanges();
         this.dispatch('completed', this);
 
@@ -100,6 +101,7 @@ export default class Tour {
     cancel() {
         this.tracking.cancelled = true;
         this.tracking.cancelledAt = Date.now();
+        Tour.theme.hide(this.current());
         this.saveChanges();
         this.dispatch('canceled', this);
 
