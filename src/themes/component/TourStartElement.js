@@ -3,6 +3,7 @@ import TourJs from "../../index";
 export default class TourStartElement extends HTMLElement {
     constructor() {
         super();
+
         this.apiEndpoint = this.getAttribute('api');
         this.addEventListener('click', (e) => {
             this.fetch();
