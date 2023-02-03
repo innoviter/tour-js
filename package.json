@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@floating-ui/dom": "^1.1.1",
     "@popperjs/core": "^2.9.2",
     "babel-loader": "^9.1.2",
     "bootstrap": "^5.0.2",

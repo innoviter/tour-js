@@ -1,9 +1,11 @@
 import * as bootstrap from "bootstrap";
 import BootstrapType from "./BootstrapType";
 import Direction from "../direction";
+import Theme from "../Theme";
 
-export default class BootstrapTheme {
+export default class BootstrapTheme extends Theme {
     constructor(tour) {
+        super();
         this.tour = tour;
         this.currentSlide = undefined;
         this.visibleItem;
@@ -12,13 +14,7 @@ export default class BootstrapTheme {
     bindToUi(slides) {
         slides?.forEach((slide, k) => {
             if ([BootstrapType.Tooltip, BootstrapType.Popover].includes(slide.type)) {
-                document.querySelector(slide.attachTo).setAttribute('data-bs-toggle', slide.type);
-                document.querySelector(slide.attachTo).setAttribute('data-bs-placement', slide.direction);
-                document.querySelector(slide.attachTo).setAttribute('data-bs-title', slide.title);
-                //   document.querySelector(slide.attachTo).setAttribute('data-bs-content', slide.content);
-                document.querySelector(slide.attachTo).setAttribute('data-bs-id', slide.id);
-                document.querySelector(slide.attachTo).setAttribute('data-bs-index', slide.order);
-
+                this.addAttributes(slide);
             } else if (slide.type === BootstrapType.Toast) {
 
 
