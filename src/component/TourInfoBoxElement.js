@@ -1,6 +1,6 @@
-import keyValueStorage from "../../KeyValueStorage";
-import Tour from "../../Tour";
-import KeyValueStorage from "../../KeyValueStorage";
+import keyValueStorage from "../KeyValueStorage";
+import Tour from "../Tour";
+import KeyValueStorage from "../KeyValueStorage";
 import {TourInfoTemplate} from "./Template";
 
 export default class TourInfoBoxElement extends HTMLElement {

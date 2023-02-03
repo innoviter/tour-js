@@ -1,7 +1,7 @@
 import Tour from "./Tour";
-import TourStartElement from "./themes/component/TourStartElement";
-import TourInfoBoxElement from "./themes/component/TourInfoBoxElement";
-import TourButtonElement from "./themes/component/TourButtonElement";
+import TourStartElement from "./component/TourStartElement";
+import TourInfoBoxElement from "./component/TourInfoBoxElement";
+import TourButtonElement from "./component/TourButtonElement";
 import BootstrapTheme from "./themes/bootstrap/BootstrapTheme";
 
 class TourJs extends Tour {
