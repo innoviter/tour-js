@@ -13,6 +13,8 @@ Copy this HTML code and paste anywhere. Click on this button will start the tour
 ```
 API here must be publicly available and `GET` method. 
 
+That's all you need to get started. You can skip following if you stick with the defaults.
+
 #### Via JavaScript
 ```javascript
 function eventhandler(event) {
@@ -25,10 +27,60 @@ function eventhandler(event) {
 }
 ```
 Your API must be in the same format.
-You does not have an API. No worries. You can create a json file in a your project public folder. 
+You does not have an API. No worries. You can create a json file in your project public folder. 
 and then add this file like `api="getting-started-tour.json`
 See our example api response json file here.
 
 ### Theme
-#### Default Themes
-#### Create your own theme
+By default, It comes with FloatingUITheme. But you are free to implement on your own theme as well.
+
+```javascript
+import {BootstrapTheme,FloatingUITheme} from "TourJs";
+
+TourJs.setTheme(BootstrapTheme);
+```
+
+#### Custom Themes
+You need to extend from `Theme` class like below
+```javascript
+export default class MyCustomTheme extends Theme {
+    constructor(tour) {
+
+    }
+
+    bindToUi(slides) {
+    }
+
+    show(slide) {
+    }
+
+    hide(slide) {
+    }
+}
+```
+### Events
+Here is the list of event triggered by this Plugin
+1. `created` => when new Instance of TourJs is created.
+2. `started` => When tour started
+3. `nextSlide` => When next button clicked from Slide panel. 
+4. `previousSlide` => When previous button clicked Slide panel.
+5. `completed` => When completed button clicked from Tour info box.
+5. `canceled` => When completed button clicked from Tour info box.
+
+### How to trigger event
+Sometimes you might need to trigger your custom event inside your custom theme.
+
+```javascript
+    function myFunc() {
+    Tourjs.EventTarget.dispatch('YourCustomEventName', {id: 1});
+}
+```
+
+
+### How to listen to an event
+```javascript
+TourJs.EventTarget.addEventListener('started', (e) => {
+    //all of our data is stored in e.detail property.
+    console.log(e.detail);
+});
+```
