@@ -63,6 +63,7 @@ export default class Tour {
         if (this.hasNext()) {
             Tour.theme.hide(this.currentSlide);
             this.tracking.currentSlideIndex++;
+            this.saveChanges();
             let currentSlide = this.current();
             this.dispatch('nextSlide', currentSlide);
 
@@ -75,6 +76,7 @@ export default class Tour {
         if (this.hasPrevious()) {
             Tour.theme.hide(this.currentSlide);
             this.tracking.currentSlideIndex--;
+            this.saveChanges();
             let currentSlide = this.current();
             this.dispatch('previousSlide', currentSlide);
 
