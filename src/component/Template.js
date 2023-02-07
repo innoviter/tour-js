@@ -38,20 +38,24 @@ const TourSlideTemplate = `
   position: absolute;
   z-index: 999;
 
-  background: #aaaaaa;
-  color: black;
+  background: #eeeeee;
+  color: #555555;
   font-weight: bold;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 10px;
   font-size: 90%;
     }
-    #tourSlideElement   {
+    #arrow-{{id}}{
   position: absolute;
-  background: #222;
+  background: #999999;
   width: 8px;
   height: 8px;
-  z-index: 999;
+  z-index: 900;
   transform: rotate(45deg);
+}
+.tourSlideElement header {
+border-bottom:1px solid #dddddd;
+padding:5px;
 }
 </style>
 <div class="tourSlideElement" role="tooltip">

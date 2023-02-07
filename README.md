@@ -62,6 +62,9 @@ export default class MyCustomTheme extends Theme {
 ```html
 <tour-info visibility="hide" style="display: none"></tour-info>
 ```
+`tour-info` tag should not have any space or other html inside it. If you want to override
+the default theme then you can add your HTML template here.
+
 This box will show the current tour title, description with Next and Previous button . In additional to that
 Tour cancel and completed button too. 
 ### Events

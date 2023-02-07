@@ -20,9 +20,9 @@ export default class FloatingUITheme extends Theme {
         let tooltip = this.visibleItem = document.querySelector('#tour-slide-' + slide.id);
         let arrowElement = document.querySelector('#arrow-tour-slide-' + slide.id);
         tooltip.style.display = 'block';
-
+        console.log(slide.direction);
         computePosition(button, tooltip, {
-            placement: slide.direction,
+            placement: 'bottom',
             middleware: [offset(6), flip(), shift({padding: 5}), arrow({element: arrowElement}),],
         }).then(({x, y, placement, middlewareData}) => {
             Object.assign(tooltip.style, {
