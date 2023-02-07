@@ -3,9 +3,10 @@ import {
     computePosition, flip, shift, offset, arrow,
 } from "@floating-ui/dom";
 
-export default class TailwindTheme extends Theme {
+export default class FloatingUITheme extends Theme {
     constructor(tour) {
         super();
+        this.visibleItem = undefined;
     }
 
     bindToUi(slides) {
@@ -16,28 +17,20 @@ export default class TailwindTheme extends Theme {
 
     show(slide) {
         let button = document.querySelector(slide.attachTo);
-        let tooltip = document.querySelector('#tour-slide-' + slide.id);
+        let tooltip = this.visibleItem = document.querySelector('#tour-slide-' + slide.id);
         let arrowElement = document.querySelector('#arrow-tour-slide-' + slide.id);
         tooltip.style.display = 'block';
 
         computePosition(button, tooltip, {
             placement: slide.direction,
-            middleware: [
-                offset(6),
-                flip(),
-                shift({padding: 5}),
-                arrow({element: arrowElement}),
-            ],
-        }).then(({x, y,placement, middlewareData}) => {
+            middleware: [offset(6), flip(), shift({padding: 5}), arrow({element: arrowElement}),],
+        }).then(({x, y, placement, middlewareData}) => {
             Object.assign(tooltip.style, {
                 left: `${x}px`, top: `${y}px`,
             });
             const {x: arrowX, y: arrowY} = middlewareData.arrow;
             const staticSide = {
-                top: 'bottom',
-                right: 'left',
-                bottom: 'top',
-                left: 'right',
+                top: 'bottom', right: 'left', bottom: 'top', left: 'right',
             }[placement.split('-')[0]];
 
             Object.assign(arrowElement.style, {
@@ -51,10 +44,8 @@ export default class TailwindTheme extends Theme {
     }
 
     hide(slide) {
-        let tooltip = document.querySelector('#tour-slide-' + slide.id);
-        console.log(tooltip);
-        if(tooltip){
-            tooltip.style.display = 'none';
+        if (this.visibleItem) {
+            this.visibleItem.style.display = 'none'
         }
     }
 }
