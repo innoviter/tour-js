@@ -58,6 +58,12 @@ export default class MyCustomTheme extends Theme {
     }
 }
 ```
+### Tour Info Box
+```html
+<tour-info visibility="hide" style="display: none"></tour-info>
+```
+This box will show the current tour title, description with Next and Previous button . In additional to that
+Tour cancel and completed button too. 
 ### Events
 Here is the list of event triggered by this Plugin
 1. `created` => when new Instance of TourJs is created.
@@ -75,7 +81,6 @@ Sometimes you might need to trigger your custom event inside your custom theme.
     Tourjs.EventTarget.dispatch('YourCustomEventName', {id: 1});
 }
 ```
-
 
 ### How to listen to an event
 ```javascript
