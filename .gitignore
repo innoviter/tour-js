@@ -8,5 +8,4 @@ yarn-error.log
 package-lock.json
 mix-manifest.json
 /public
-/dist
 .DS_Store

@@ -1,4 +1,5 @@
 import KeyValueStorage from "./KeyValueStorage";
+import FloatingUITheme from "./themes/FloatingUI/FloatingUITheme";
 
 export default class Tour {
     static STORAGE_TOUR_INFO_KEY = 'current_active_tour_info'
@@ -7,7 +8,7 @@ export default class Tour {
 
     static theme;
 
-    static themeClass;
+    static themeClass = FloatingUITheme;
 
     static settings = {
         ENABLE_ARROW_KEYS: true,
@@ -24,7 +25,7 @@ export default class Tour {
             startedAt: Date.now(),
             endAt: null,
             cancelledAt: null,
-            theme: "bootstrap"
+            theme: "floatingUI"
         };
         this.data.id = id;
         this.data.slug = slug;

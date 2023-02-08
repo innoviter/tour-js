@@ -31,33 +31,6 @@ You does not have an API. No worries. You can create a json file in your project
 and then add this file like `api="getting-started-tour.json`
 See our example api response json file here.
 
-### Theme
-By default, It comes with FloatingUITheme. But you are free to implement on your own theme as well.
-
-```javascript
-import {BootstrapTheme,FloatingUITheme} from "TourJs";
-
-TourJs.setTheme(BootstrapTheme);
-```
-
-#### Custom Themes
-You need to extend from `Theme` class like below
-```javascript
-export default class MyCustomTheme extends Theme {
-    constructor(tour) {
-
-    }
-
-    bindToUi(slides) {
-    }
-
-    show(slide) {
-    }
-
-    hide(slide) {
-    }
-}
-```
 ### Tour Info Box
 ```html
 <tour-info visibility="hide" style="display: none"></tour-info>

@@ -2,8 +2,7 @@ import Tour from "./Tour";
 import TourStartElement from "./component/TourStartElement";
 import TourInfoBoxElement from "./component/TourInfoBoxElement";
 import TourButtonElement from "./component/TourButtonElement";
-import BootstrapTheme from "./themes/bootstrap/BootstrapTheme";
-import FloatingUITheme from "./themes/Tailwind/FloatingUITheme";
+import FloatingUITheme from "./themes/FloatingUI/FloatingUITheme";
 import TourSlideElement from "./component/TourSlideElement";
 import CounterElement from "./component/CounterElement";
 
@@ -36,4 +35,4 @@ customElements.define('tour-slide', TourSlideElement);
 customElements.define('tour-counter', CounterElement);
 
 export default TourJs;
-export {BootstrapTheme, FloatingUITheme};
+export {FloatingUITheme};
