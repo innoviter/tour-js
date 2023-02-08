@@ -19,7 +19,6 @@ export default class TourInfoBoxElement extends HTMLElement {
         Tour.EventTarget.addEventListener('canceled', (e) => {
             this.setAttribute('visibility', 'hide');
         });
-        //@todo need to update Current Index.
     }
 
     connectedCallback() {
@@ -35,9 +34,6 @@ export default class TourInfoBoxElement extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        if (name === 'currentIndex') {
-            this.updateUi();
-        }
         if (name === 'visibility' && oldValue !== newValue) {
             if (newValue === 'show') {
                 this.style.display = 'block';

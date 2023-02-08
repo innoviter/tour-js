@@ -6,12 +6,7 @@ const TourInfoTemplate = `<div class="card bottom-0 left-0" id="tourInfoBox" sty
                         <tour-button role="previous" class="btn btn-outline-warning btn-sm tourPreviousSlideBtn"
                                      id="previousSlideBtn">Previous
                         </tour-button>
-                        <div>
-                            <span id="currentSlideIndex">{{currentIndex}}</span>
-                            <span>/</span>
-                            <span id="tourTotalSlideCount">{{totalSlide}}</span>
-                        </div>
-
+                        <tour-counter></tour-counter>
                         <tour-button role="next" class="btn btn-outline-primary btn-sm tourNextSlideBtn"
                                      id="nextSlideBtn">Next
                         </tour-button>

@@ -5,6 +5,7 @@ import TourButtonElement from "./component/TourButtonElement";
 import BootstrapTheme from "./themes/bootstrap/BootstrapTheme";
 import FloatingUITheme from "./themes/Tailwind/FloatingUITheme";
 import TourSlideElement from "./component/TourSlideElement";
+import CounterElement from "./component/CounterElement";
 
 class TourJs extends Tour {
     static getInstance() {
@@ -32,6 +33,7 @@ customElements.define('tour-info', TourInfoBoxElement);
 customElements.define('tour-start', TourStartElement);
 customElements.define('tour-button', TourButtonElement);
 customElements.define('tour-slide', TourSlideElement);
+customElements.define('tour-counter', CounterElement);
 
 export default TourJs;
 export {BootstrapTheme, FloatingUITheme};
