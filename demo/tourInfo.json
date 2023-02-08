@@ -1,0 +1,69 @@
+{
+  "id": 1,
+  "slug": "step-by-step-guide",
+  "title": "Step by Step Guide",
+  "description": "Step by Step Guide",
+  "status": "active",
+  "slides": [
+    {
+      "id": 1,
+      "title": "Name of Your Company",
+      "content": "Write your company Name. Must be between 10 to 150 words.",
+      "attachTo": "#companyName",
+      "type": "tooltip",
+      "direction": "top",
+      "url": "/page-one.html",
+      "order": 2
+    },
+    {
+      "id": 2,
+      "title": "Write something about your Company",
+      "content": "Describe what your company do.",
+      "attachTo": "#companyDescription",
+      "type": "popover",
+      "direction": "top",
+      "url": "/page-one.html",
+      "order": 1
+    },
+    {
+      "id": 3,
+      "title": "Company Type",
+      "content": "Please choose company category",
+      "attachTo": "#companyType",
+      "type": "toast",
+      "direction": "top",
+      "url": "/page-one.html",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "title": "Company Phone Number",
+      "content": "Please fill up your company contact number",
+      "attachTo": "#companyPhone",
+      "type": "popover",
+      "direction": "top",
+      "url": "/page-two.html",
+      "order": 4
+    },
+    {
+      "id": 5,
+      "title": "Email Address",
+      "content": "Email address of your company. Where people may contact",
+      "attachTo": "#companyEmail",
+      "type": "popover",
+      "direction": "top",
+      "url": "/page-two.html",
+      "order": 5
+    },
+    {
+      "id": 6,
+      "title": "Location",
+      "content": "Where your company located.",
+      "attachTo": "#companyLocation",
+      "type": "popover",
+      "direction": "top",
+      "url": "/page-two.html",
+      "order": 6
+    }
+  ]
+}
