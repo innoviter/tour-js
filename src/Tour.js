@@ -1,5 +1,6 @@
 import KeyValueStorage from "./KeyValueStorage.js";
 import FloatingUITheme from "./themes/FloatingUI/FloatingUITheme.js";
+import Slide from "./Slide";
 
 export default class Tour {
     static STORAGE_TOUR_INFO_KEY = 'current_active_tour_info'
@@ -9,6 +10,8 @@ export default class Tour {
     static theme;
 
     static themeClass = FloatingUITheme;
+
+    static slideClass = Slide;
 
     static settings = {
         ENABLE_ARROW_KEYS: true,
@@ -47,7 +50,7 @@ export default class Tour {
     start() {
         let currentSlide = this.data.slides[this.tracking.currentSlideIndex];
         Tour.theme = new Tour.themeClass(this);
-        Tour.theme.bindToUi(this.pageSlides);
+        Tour.theme.bindToUi(this.pageSlides.map(slide=>new Tour.slideClass(slide)));
 
         this.dispatch("started", this.data);
 
@@ -56,8 +59,10 @@ export default class Tour {
 
     static setTheme(theme) {
         Tour.themeClass = theme;
+    }
 
-        return this;
+    static setSlide(slide) {
+        Tour.slideClass=slide;
     }
 
     next() {
@@ -86,7 +91,11 @@ export default class Tour {
     }
 
     current() {
-        return this.currentSlide = this.data.slides[this.tracking.currentSlideIndex];
+        if (this.data.slides.indexOf(this.tracking.currentSlideIndex)) {
+            return this.currentSlide = new Tour.slideClass(this.data.slides[this.tracking.currentSlideIndex]);
+        } else {
+            throw new Error('Out of index');
+        }
     }
 
     complete() {

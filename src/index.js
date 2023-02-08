@@ -4,6 +4,8 @@ import TourInfoBoxElement from "./component/TourInfoBoxElement.js";
 import TourButtonElement from "./component/TourButtonElement.js";
 import TourSlideElement from "./component/TourSlideElement.js";
 import CounterElement from "./component/CounterElement.js";
+import Theme from "./themes/Theme.js";
+import Slide from "./Slide.js";
 
 class TourJs extends Tour {
     static getInstance() {
@@ -34,3 +36,4 @@ customElements.define('tour-slide', TourSlideElement);
 customElements.define('tour-counter', CounterElement);
 
 export default TourJs;
+export {Theme, Slide};

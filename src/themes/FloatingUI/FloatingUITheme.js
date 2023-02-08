@@ -10,6 +10,7 @@ export default class FloatingUITheme extends Theme {
     }
 
     bindToUi(slides) {
+        console.log(slides);
         slides?.forEach((slide, k) => {
             this.addElement(slide);
         });
