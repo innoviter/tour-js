@@ -1,4 +1,4 @@
-import Theme from "../Theme";
+import Theme from "../Theme.js";
 import {
     computePosition, flip, shift, offset, arrow,
 } from "@floating-ui/dom";

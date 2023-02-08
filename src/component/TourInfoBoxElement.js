@@ -1,7 +1,6 @@
-import keyValueStorage from "../KeyValueStorage";
-import Tour from "../Tour";
-import KeyValueStorage from "../KeyValueStorage";
-import {TourInfoTemplate} from "./Template";
+import Tour from "../Tour.js";
+import KeyValueStorage from "../KeyValueStorage.js";
+import {TourInfoTemplate} from "./Template.js";
 
 export default class TourInfoBoxElement extends HTMLElement {
     constructor() {
@@ -22,7 +21,7 @@ export default class TourInfoBoxElement extends HTMLElement {
     }
 
     connectedCallback() {
-        if (keyValueStorage.has(Tour.STORAGE_TOUR_INFO_KEY)) {
+        if (KeyValueStorage.has(Tour.STORAGE_TOUR_INFO_KEY)) {
             this.updateUi();
             this.style.display = 'block';
             this.setAttribute('visibility', 'show');

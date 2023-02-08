@@ -1,4 +1,4 @@
-import TourJs from "../index";
+import TourJs from "../Tour.js";
 
 export default class TourStartElement extends HTMLElement {
     constructor() {

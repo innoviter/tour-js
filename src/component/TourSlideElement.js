@@ -1,4 +1,4 @@
-import {TourSlideTemplate} from "./Template";
+import {TourSlideTemplate} from "./Template.js";
 
 export default class TourSlideElement extends HTMLElement {
     constructor() {

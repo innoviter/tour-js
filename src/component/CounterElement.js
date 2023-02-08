@@ -1,5 +1,5 @@
-import KeyValueStorage from "../KeyValueStorage";
-import Tour from "../Tour";
+import KeyValueStorage from "../KeyValueStorage.js";
+import Tour from "../Tour.js";
 
 export default class CounterElement extends HTMLElement {
     constructor() {

@@ -1,5 +1,5 @@
-import KeyValueStorage from "./KeyValueStorage";
-import FloatingUITheme from "./themes/FloatingUI/FloatingUITheme";
+import KeyValueStorage from "./KeyValueStorage.js";
+import FloatingUITheme from "./themes/FloatingUI/FloatingUITheme.js";
 
 export default class Tour {
     static STORAGE_TOUR_INFO_KEY = 'current_active_tour_info'
