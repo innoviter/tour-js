@@ -1,8 +1,13 @@
 # Website Guided Tour
 
 ### How to Install
+### via npm
 ``` 
 npm install @cysense-hq/tourjs --save
+```
+### via CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/@cysense-hq/tourjs/dist/tourjs.js" defer></script>
 ```
 ![cysense-hq-website-guided-tour-demo](https://user-images.githubusercontent.com/6059541/217733066-6ed7759e-d288-4e40-9e49-83715de982e0.gif)
 

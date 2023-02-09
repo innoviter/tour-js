@@ -1,6 +1,6 @@
 {
   "name": "@cysense-hq/tourjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Website guided tour",
   "main": "src/index.js",
   "devDependencies": {
