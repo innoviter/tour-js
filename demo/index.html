@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to the Tourjs demo application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
 </head>
 <body>
-<h3>Click the button to start the tour</h3>
-<tour-start class="btn btn-primary btn-lg" api="/tourInfo.json" id="startTheTour">Start the Tour</tour-start>
-<script src="path/to/tourjs.js"></script>
+<div class="container">
+    <h3>Click the button to start the tour</h3>
+    <tour-start class="btn btn-primary btn-lg" api="/tourInfo.json" id="startTheTour">Start the Tour</tour-start>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/cysense-hq/tour-js/dist/tourjs.js"></script>
 </body>
 </html>
