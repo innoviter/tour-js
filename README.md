@@ -26,20 +26,18 @@ function eventhandler(event) {
     });
 }
 ```
+**<font color="red">Warning: variable must be `globalThis.webtour`. Because this global variable is used in other custom web components.</font>**
+
 Your API must be in the same format.
 You does not have an API. No worries. You can create a json file in your project public folder. 
 and then add this file like `api="getting-started-tour.json`
 See our example api response json file here.
 
-### Tour Info Box
-```html
-<tour-info visibility="hide" style="display: none"></tour-info>
-```
-`tour-info` tag should not have any space or other html inside it. If you want to override
-the default theme then you can add your HTML template here.
+1. [Theme Customization](Theme.md)
+2. [API data format](APIFormat.md)
 
-This box will show the current tour title, description with Next and Previous button . In additional to that
-Tour cancel and completed button too. 
+
+
 ### Events
 Here is the list of event triggered by this Plugin
 1. `created` => when new Instance of TourJs is created.
@@ -65,3 +63,4 @@ TourJs.EventTarget.addEventListener('started', (e) => {
     console.log(e.detail);
 });
 ```
+
