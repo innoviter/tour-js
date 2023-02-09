@@ -8,4 +8,4 @@ package-lock.json
 mix-manifest.json
 /public
 .DS_Store
-.npmignore
+/demo

@@ -1,5 +1,5 @@
 {
-  "name": "tourjs",
+  "name": "@cysense-hq/tourjs",
   "version": "1.0.0",
   "description": "Website guided tour",
   "main": "src/index.js",
